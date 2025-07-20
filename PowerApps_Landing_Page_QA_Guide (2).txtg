@@ -1,0 +1,400 @@
+
+
+
+
+
+
+
+
+
+
+### PowerApps Landing Page Task Content QA Guide by CodeRoad
+
+This guide provides a step-by-step process for verifying the correct delivery of Task Info content, URL and title for the Landing Page creation.
+
+
+
+
+
+
+
+#### Power Apps Landing Page Task Structure.
+
+A Power Apps Landing Page Task is based on two Request Details, which guide the creation of HTML content to add manually in a Landing Page using Dealer.com’s tool, Composer, and the Content To Post section, which is the result of the Creative Team’s work based on both. The two Request Details contain their own elements, the most important ones for the QA process being mentioned here:
+
+Content Request Details:
+
+Name of Dealership: The name of the dealership account the content will be directed to. (Ex. Daniels Long Chevrolet)
+
+Account ID: The alphanumeric account ID the dealership has for the CMS system, and reflected if appliable in the Page Build Extension or URL for the new page (ex. danielslongchevroletco)
+
+Topic: The main theme the HTML custom content should be about. This can be a specific model from a certain year and a chosen Make/OEM, a dealership’s profit center’s specific service, a certain car body type (SUV, Trucks, Sedans, etc.) that can be related to a specific OEM/Make or not.
+
+Content Type: The type of page the content should be adapted to. This can be Hub Pages (Content that serves as a focal point for a particular topic or theme, with links to multiple related pages as articles, blog posts, or product listings), MSLPs (Content that details with images and text the main features of a specific car), Comparison pages (Content that compares the features between two cars, two services, and others. Usually, it is used to showcase the advantages of a certain car model related to the dealership’s OEM/Make above a similar model that can be related or not.), etc.
+
+Additional Info: Extra details that the page’s content should include.
+
+Geos: The geographical location (city/town, state) the content should adapt to. This helps the content advertise the advantages of the car model or dealership’s services based on the chosen location’s attractions, landscapes, etc.
+
+Links: URLs the content should include in the shape of <a> HTML tags. They can be both relative (ex. /dealership/about.htm, /new-inventory/index.htm) or absolute (ex. ).
+
+Page Request Details:
+
+Page Build Title: The title the new or existing Landing Page should have.
+
+Page Build Extension: The absolute or relative URL link the Landing Page is bound to. Can lead to an existing page, or it will be for a new page. (Ex. https://www.victorycdjrmarietta.com/ram-2500-vs-ford-f-250-shallotte-nc.htm, https://soundfordfd.cms.dealer.com/service/service-financing.htm, /research/vistiq.htm). In the case of absolute links, there are the live sites (ex. https://www.victorycdjrmarietta.com/ram-2500-vs-ford-f-250-shallotte-nc.htm ) and the Composer Dealer.com domain sites (https://soundfordfd.cms.dealer.com/service/service-financing.htm).
+
+Content To Post: An HTML text that is the result of both Request Details and should be copied and pasted by the MS team to the new/existing Landing Page.
+
+#### Task Content
+
+The Task Content is an HTML-based text that is written in the “Content To Post” section that the MS Team will add to the new or existing Landing Page.
+
+Task Content Example:
+
+<h2>2026 Cadillac VISTIQ — Answering Common FAQs</h2>
+
+<p>At Vandervere Cadillac, we're proud to help drivers receive additional details about the 2026 Cadillac VISTIQ lineup. If you don't see an adequate response below or want to learn more, don't hesitate to get in touch with our team or visit our showroom in Akron, OH.</p>
+
+<h3>What is the Cadillac VISTIQ?</h3>
+
+<p>Cadillac VISTIQ SUVs are midsize three-row electric SUVs positioned between the Cadillac LYRIQ and the Cadillac Escalade IQ. New Cadillac VISTIQ SUVs take inspiration from the gas-powered 2025 Cadillac XT6 and are sometimes referred to as the "baby Cadillac Escalade".</p>
+
+<h3>When will the 2026 Cadillac VISTIQ be available?</h3>
+
+<p>2026 Cadillac VISTIQ models are already available, with new models frequently arriving at our showroom in Akron, OH. Browse our <a href="/new-cadillac/suvs/vistiq-akron-oh.htm">new Cadillac VISTIQ inventory</a> to see what's available, or contact our team to place a custom order for your favorite configuration today.</p>
+
+<h3>How much horsepower does the Cadillac VISTIQ have?</h3>
+
+<p>2026 Cadillac VISTIQ SUVs produce up to 615 horsepower and 650 pound-feet of torque with Velocity Max activated. With nearly instant torque output, the Cadillac VISTIQ can sprint from 0 to 60 mph in around 3.7 seconds for plenty of smiles per mile near Canton.</p>
+
+<h3>Can the Cadillac VISTIQ tow trailers?</h3>
+
+<p>Yes, the Cadillac VISTIQ provides a maximum towing capacity of up to 5,000 pounds, helping you bring your favorite camper trailer or boat on adventures near Green, OH. Towing requires the available frame-mounted trailer hitch, and may require additional equipment depending on your preferred model.</p>
+
+<h3>What is the electric range of the Cadillac VISTIQ?</h3>
+
+<p>2026 Cadillac VISTIQ SUVs have an EPA-estimated range of up to 305 miles on a full battery when using standard 11.5 kW charging, helping you tackle commutes and adventures across Medina. New Cadillac VISTIQ SUVs also support Level 2 AC Charging and Public DC Fast Charging, so you can charge while shopping or eating and get back on the road with a full battery.</p>
+
+<h3>What kind of battery does the Cadillac VISTIQ have?</h3>
+
+<p>2026 Cadillac VISTIQ SUVs come with a 102.0 kWh Propulsion Battery Pack and 400V architecture that supports a maximum Public DC Fast Charge speed of 190 kW. Drivers near Wadsworth can add up to 80 miles of range in around 10 minutes with the integrated CCS Type 1 port, or opt for the available GM-Approved NACS Adapter to use 20,000+ Supercharger locations across the country.</p>
+
+<h3>Does the Cadillac VISTIQ come with Super Cruise®?</h3>
+
+<p>Yes, all 2026 Cadillac VISTIQ models offer Super Cruise® Hands-Free Driver Assistance Technology with a 3-year OnStar® One Super Cruise Plan. Super Cruise® allows attentive drivers to take their hands off the wheel and stretch on compatible roads like the Akron Expressway near Cuyahoga Falls.</p>
+
+<h3>What is the price of the Cadillac VISTIQ?</h3>
+
+<p>2026 Cadillac VISTIQ SUVs have an MSRP (Manufacturer's Suggested Retail Price) starting from $77,395. MSRP excludes destination freight charge, tax, title, license, dealer fees, and optional equipment. For complete details, please contact our sales team.</p>
+
+<h3>Is the Cadillac VISTIQ spacious?</h3>
+
+<p>Cadillac VISTIQ SUVs offer seating for up to seven people with 43.14 inches of front legroom, 40.16 inches of second-row legroom, and 30.63 inches of third-row legroom. Cadillac VISTIQ SUVs also offer up to 80.2 cubic feet of cargo capacity behind the first row, up to 43.0 cubic feet of cargo capacity behind the second row, and up to 15.2 cubic feet of cargo capacity behind the third row.</p>
+
+<h3>Is the Cadillac VISTIQ good in wet or cold weather?</h3>
+
+<p>Yes, Cadillac VISTIQ SUVs feature dual motor all-wheel drive, up to 7.24 inches of ground clearance, and Driver Modes that include Snow/Ice, Tour, Sport, Velocity Max, and My Mode.</p>
+
+<h3>How can I contact Vandervere Cadillac?</h3>
+
+<p>Our sales team can be contacted by giving us a call, using our digital chat tool, leaving us a message with our inquiry form, or by visiting our showroom at 111 W Market St in Akron, OH.</p>
+
+#### Potential Task Content/Structure considerations for QA:
+
+Sometimes, when posting the Task to the Power Apps Queue, there are some mistakes left untouched from the Creative Staff’s part, leading to confusion for the MS Team in the moment of creating the pages, and depending of the gravity of the situation, having to request a rework to the client. There are certain errors that can occur in one of three key elements of the Task’s structure, either isolated or combined:
+
+##### Page Build Extension QA:
+
+A correct Page Build Extension URL should ideally start with the CMS subdomain chain (https://[dealership account ID].cms.dealer.com/) and have their article permalinks only with alphanumeric characters and the words separated only by a hyphen (“-”), and should end with the “.htm” suffix
+
+
+
+Examples of a correct Page Build Extension URL with the “blackwellfordfd” account ID:
+
+
+
+
+
+Examples of incorrect Page Build Extension URLs:
+
+blackwellfordfd.dealer/dealership/from-america-for-america.htm (first part of the URL should be “blackwellfordfd.cms.dealer.com”)
+
+blackwellfordfd.cms.dealer.com/dealership/from america for|america.htm (the permalinks words are separated by spaces and other characters different of a hyphen)
+
+https://blackwellfordfd.cms.dealer.com/deale#sh%p/from-am$rica-for-a&erica.htm (there are external characters apart of points (.), hyphens(-) and alphanumeric characters)
+
+https://blackwellfordfd.cms.dealer.com/dealership/from-america-for-america (the link doesn’t end with the “.htm” suffix)
+
+https://blackwellfordfd.cms.dealer.com/dealership/from-america-for-america.html (the link shouldn’t end with any other suffix than “.htm”)
+
+
+
+The given Page Build Extension URL always should have words that relate to the “Page Title” and/or the “Content To Post” sections.
+
+Example of a coherent Page Build Extension URL using a Topic, a Title and a section of the Content to Post for the accountID “unitycadillac”:
+
+Topic: 2026 Cadillac Vistiq
+
+Title: 2026 Cadillac VISTIQ For Sale At Unity Cadillac
+
+Extract from Content To Post: <h3>LUXURY FOR YOUR LIFE</h3><p>In VISTIQ, moments of luxury are a daily expectation. In all three rows, every detail, intuitive technology and excellent view will have you daydreaming about your next long drive.</p>
+
+URL:
+
+This Page Build Extension URL example is correct and matches the content, since the Topic for the Task talks about the 2026 Cadillac Vista. The URL should match with the Geos (if they specify them), the Topic and the Content Type
+
+Example of an incoherent Page Build Extension URL using a Topic, a Title and a section of the Content to Post for the accountID “unitycadillac”:
+
+Topic: 2026 Cadillac Vistiq
+
+Title: 2026 Cadillac VISTIQ For Sale At Unity Cadillac
+
+Extract from Content To Post: <h3>LUXURY FOR YOUR LIFE</h3><p>In VISTIQ, moments of luxury are a daily expectation. In all three rows, every detail, intuitive technology and excellent view will have you daydreaming about your next long drive.</p>
+
+URL: https://unitycadillac.cms.dealer.com/2025-cadillac-optiq.htm
+
+This Page Build Extension URL example is not correct because while the Topic for the Task talks about the 2026 Cadillac Vista, the extension talks for the 2025 Cadillac Optiq. It differs from the main Topic by far.
+
+There will also be the case where the accountID of the request and the one from the URL won’t match. If this happens, it counts as a mistake too.
+
+
+
+##### Task Content internal QA points:
+
+As a note, the content should be HTML-based text, with headings, lists and paragraphs made clear and displayed. Avoid sending plain text without HTML tags to the Content To Post section (check Task Content section for an example).
+
+
+
+Each HTML element should have both opening and closing HTML tags that correspond to their purpose. There should not be missing closing/opening tags or a mismatch between both.
+
+
+
+Correct Tag structure examples:
+
+For listings: <[ul/ol]><li>Ford Escape</li><li>Ford Edge</li></[ul/ol]>
+
+For paragraphs: <p>Visit our showroom to learn more and schedule a test drive near Shallotte, NC.</p>
+
+For headings: <h2>Visit Unity Cadillac Today</h2>
+
+For links: <a href="/new-cadillac/suvs/vistiq-akron-oh.htm">new Cadillac VISTIQ inventory</a>
+
+This can apply for any HTML element.
+
+
+
+Incorrect Tag structure examples:
+
+<h2>Visit Unity Cadillac today (the </h2> closing tag is missing in this header. This also can apply to paragraphs, lists and links, from which the latter can lead to redirection errors)
+
+<h2>Visit Unity Cadillac Today</h3> (the </h3> closing tag doesn’t match with the <h2> opening tag. This also applies the other way around)
+
+<a href=”/new-cadillac/suvs/vistiq-akron-oh.htm”>visit our new Cadillac VISTIQ inventory</a> (the ” symbol shouldn’t be used in href attributes for the <a> tag for links, instead use the " symbol)
+
+##### Content/Page Extension URL/Title incoherence:
+
+As the Topic is established, all the three core elements of the Task (Content To Post, Page Extension URL, and Page Title) should not only match the Topic, but also between themselves.
+
+Examples of incoherence between the Page Extension URL, the Content To Post, and the Page Title:
+
+Example 1.
+
+Topic:
+
+Lexus RX Lease Deals & Specials in Chester Springs, PA
+
+Content Type:
+
+Finance/Leasing
+
+Page extension URL:
+
+
+
+Page Title:
+
+Lexus RX Lease Deals & Specials in Chester Springs, PA
+
+Content to Post:
+
+<p>Lexus TX lease plans at Lexus of Chester Springs give drivers a smart way to enjoy three-row space and advanced tech without a long commitment. Each model comes equipped with Lexus Safety System+ 3.0 and upscale interior finishes, making everyday drives, school runs, and weekend trips near Valley Forge more comfortable. Leases are structured for driver flexibility to match your mileage needs and upgrade preferences.</p>
+
+<p>Drivers with families near Downingtown enjoy the Lexus TX for its practical features, standard third-row seating, and flexible cargo that holds sports gear, luggage, or bags from big shopping trips with easy seat folding and smart storage features. Choose from attractive terms that align with your budget and mileage needs—ideal for drivers who like driving the newest models every few years.</p>
+
+<h3>Benefits of Leasing a New Lexus TX</h3>
+
+<p>Leasing simplifies car ownership with shorter terms, lower monthly payments, and minimal upfront cost. Convenient end-of-lease options with flexible mileage plans and wear-and-use guidelines.</p>
+
+<h3>Meet the 2025 Lexus TX Lineup</h3>
+
+<p>The 2025 Lexus TX lineup focuses on smooth performance, practical design, and upscale comfort that suits daily driving and weekend family travel.</p>
+
+<ul>
+
+<li><strong>TX 350</strong>: Powered by a turbocharged 2.4-liter engine. Available with front-wheel or all-wheel drive (AWD). Quiet cabin acoustics and soft-touch materials create a composed atmosphere for families in Chesterbrook.</li>
+
+<li><strong>TX 500h</strong>: Adds a hybrid powertrain with DIRECT4 AWD and a six-speed automatic transmission. Standard adaptive variable suspension sharpens responsiveness. Offered in the F Sport Performance trim with paddle shifters, sport brakes, and dynamic rear steering.</li>
+
+<li><strong>TX 550h+</strong>: The plug-in hybrid with smooth acceleration and all-electric capability for short-range driving. Premium and Luxury trims add Mark Levinson audio, ambient lighting themes, and larger infotainment displays with Drive Connect.</li>
+
+</ul>
+
+<p>Available packages include advanced driver assist features, panoramic roof options, and heated second-row captain's chairs, all popular with buyers from Chesterbrook to West Chester.</p>
+
+<h2>Start Your New Lexus TX SUV Lease Today in Chester Springs, PA</h2>
+
+<p>Lexus of Chester Springs simplifies the leasing process for your preferred <a href="/new-lexus/tx-chester-springs-pa.htm">Lexus TX model</a> with transparent pricing, tailored lease terms, and fast approvals. Drivers across Chester Springs, PA, are invited to come to our showroom floor, take a test drive, and lease a new Lexus TX today.</p>
+
+Point of incoherences: While the Page Title and the Extension URL are talking about the Lexus RX, the content talks about the Lexus TX, which is a different model and topic, despite it checks the Content Type. This mistake can lead to confusion for the MS team when creating a new Landing Page.
+
+--------------------------------
+
+Example 2.
+
+Topic:
+
+New & Used Volvo Dealership Serving Maryland
+
+Content Type:
+
+Geotarget/Directions
+
+Page extension URL:
+
+
+
+Page Title:
+
+New & Used Volvo Dealership Serving Maryland
+
+Content to Post:
+
+<h2>Shop Our Volvo Dealership Serving Maryland</h2>
+
+<p>At Volvo Cars of Frederick, we're here to serve the State of Maryland, offering a wide selection of both new and pre-owned vehicles from the renowned luxury automaker. You're encouraged to visit us to learn all about the various options that are available to you at our dealership in Frederick, as we're ready to begin the process with you and highlight all the reasons why you should consider a vehicle from our dealership.</p>
+
+<h2>Discover Your Next New Volvo in Maryland</h2>
+
+<p>With the latest <a href="/new-inventory/index.htm">new Volvo</a> lineup, you can find the ideal sedan or SUV to enjoy a premium drive. This includes the Volvo S90, along with options like the Volvo XC40, XC90, and XC90. Many of these options also come with plug-in hybrid variants, while drivers can also discover fully electric Volvo vehicles which include the Volvo EX30, and Volvo EX90 in our selection. With a diverse and large selection of new Volvo vehicles, we attract drivers from across the state of Maryland who are looking to get behind the wheel of a Volvo. These are available in the latest model years, various trim levels, colors and packages to give you a bevy of choices, that we're sure you'll find the right fit.</p>
+
+<h2>Save When You Buy a Pre-Owned Vehicle</h2>
+
+<p>At the dealership, we also carry many <a href="/used-inventory/index.htm">used vehicles</a> for sale, including pre-owned Volvo vehicles. You can find premium options at a lower cost than buying a brand new choice, and still experience plenty of quality for your drives in Maryland, whether you're from Mount Airy or Walkersville. In addition to pre-owned Volvo options, including certified pre-owned vehicles, we also have used cars and SUVs from a variety of other brands. You'll find options from other luxury automakers as well as economy brands as we source a wide selection to give you more options here at Volvo Cars of Frederick.</p>
+
+<h2>Finance Your Volvo Vehicle at Our Dealership</h2>
+
+<p>Be it a new Volvo or a pre-owned option, to finalize the process and get behind the wheel of your ideal match, our <a href="/financing/index.htm">finance center</a> is here to help you through that process. We can discuss various incentives and offers for purchasing or leasing a new Volvo, and discuss auto loan choices for pre-owned options. We'll showcase various rates and help you find the payment plan that is most sensible to your finances, and provide a clear and streamlined process so you can be out enjoying your new vehicle soon.</p>
+
+<h2>Find Volvo Service in Maryland</h2>
+
+<p>If you're a Volvo driver in Maryland in places like Damascus, Ijamsville and Middletown and are in need of maintenance and repair for your Volvo vehicle, our service center is here to help. We can assist you with factory-scheduled maintenance along with routine services like oil changes and tire rotations, along with diagnosing and finding the fix for any complex vehicle issues you might be having. Those in Maryland can count on our team as we're highly-trained and utilize genuine Volvo parts for all our services. Making an appointment is easy, too, as you can schedule online and find the opening that works best for you.</p>
+
+<h2>Learn More About Our Volvo Dealership in Maryland</h2>
+
+<p>If you'd like to learn more, contact us or come visit us at <a href="/dealership/directions.htm">Volvo Cars of Frederick</a> and we'd be happy to begin the process and showcase why our Volvo dealership is the destination for those seeking luxury vehicles in Maryland.</p>
+
+
+
+Point of incoherences: While the Page Title and the Content are talking about a Volvo Cars of Frederick’s dealership in the state of Maryland, the Page Extension URL is written like it is for a dealership located in Hyatsville, MD, which is a different location from the indicated. This mistake can lead to confusion for the MS team when creating a new Landing Page, or in the case it’s a link for an existing page, to post the wrong Content.
+
+------------------------
+
+Example 3.
+
+Topic:
+
+Daniels Long Proudly Supports Our Military Community
+
+Content Type:
+
+About
+
+Page extension URL:
+
+
+
+Page Title:
+
+Coast Chevrolet Military Community
+
+Content to Post:
+
+<h2>Daniels Long Chevrolet Proudly Supports Our Military Community</h2>
+
+
+
+<p>Colorado Springs is a military town and as a vital part of this community, Daniels Long Chevrolet is honored to support the soldiers, airmen and Marines who help keep us all safe. At Daniels Long Chevrolet, we stand behind the young air woman who put herself through a local Colorado university by serving in the ROTC. We support the Marine who follows in his father's footsteps. We have a special <a href="/MilitaryProgram.htm">Military Program</a> for the soldier reporting to his first Air Force base and for the sailor who lives his life at sea.</p>
+
+
+
+<p>Daniels Long Chevrolet is proud to support the military community in Colorado Springs. If you're a member of the Armed Forces and you want help buying a new or used Chevrolet, we invite you to visit our dealership and allow us to tell you about the Military Discounts and special offers we have available.</p>
+
+
+
+<h3>We're here to support service members at local military bases</h3>
+
+
+
+<p>Nearby military installations include the Cheyenne Mountain Complex, just minutes from Fountain, CO, Fort Carson, Peterson Space Force Base near Falcon, CO and Peyton, CO, Schriever Space Force Base, and the United States Air Force Academy. In addition, Phil Long proudly supports the Mt. Carmel Veterans Service Center in Colorado Springs.</p>
+
+
+
+<p>When you add up all these military facilities here in the Colorado Springs and Castle Rock, CO area, you realize why the Armed Forces are such a vital part of our community. There is simply no way we can properly express our thanks to the many service members in the area who put their lives on the line to guard the precious freedoms we are all blessed with.</p>
+
+
+
+<h3>Take advantage of our GM Military Discount</h3>
+
+
+
+<p>We offer $500 on select Chevrolet models including the ultra-popular Silverado 1500 pickup, the top-selling Chevy Equinox SUV, the Chevy Traverse, the Malibu sedan, Trailblazer, the Colorado mid-size pickup, as well as the full-size, family-friendly Chevy Tahoe and Chevy Suburban. And the list of eligible Chevrolet vehicles in our <a href="/new-inventory/index.htm">new inventory</a> goes on with the mid-size Chevy Blazer, and the very affordable subcompact Chevy Trax.</p>
+
+
+
+<h3>Here's how to apply for our $500 Military Discount </h3>
+
+
+
+<p>First, select your ideal vehicle from the long list of eligible models, including those mentioned above. Then get an authorization number that needs to be provided at the time your vehicle is delivered, and we can show you how to do that. Submit our totally secure online <a href="/financing/application.htm">financing application</a> to get pre-approved for a loan in advance. Taking this step won't have an impact on your credit score and it's a way to accelerate the process so you can get the discount you deserve.</p>
+
+
+
+<h3>Get a $500 Military Discount on one of our new Chevy models</h3>
+
+
+
+<p>We have an great selection of new Chevrolet cars, trucks and SUVs that are all eligible for the $500 Military Discount. Our military hit parade starts off with the legendary Chevy Silverado 1500, the full-size pickup that gives you up to 13,300 pounds of maximum towing capacity. We also offer the mid-size Chevy Colorado, with excellent off-road capability and a towing capacity of up to 7,700 pounds.</p>
+
+
+
+<p>Military families appreciate our great selection of new Chevy SUVs including the Equinox compact crossover, the mid-size Chevy Traverse with seating for a military family of eight, and our full-size Chevy Tahoe and Suburban SUVs. Military service members can save money with the handsome Chevy Malibu. It has plenty of interior space and incredible fuel efficiency of up to 36 MPG on the highway.</p>
+
+
+
+<h3>Please allow us to express our gratitude in tangible ways</h3>
+
+
+
+<p>In addition to our wide variety of vehicles that are well-suited for military service members, we have a strong commitment to customer service. The people in our finance center can help you qualify for a loan and for our $500 Military Discount. Read <a href="/dealership/about.htm">about our dealership</a> and schedule a test drive soon at Daniels Long Chevrolet in Colorado Springs, CO.</p>
+
+
+
+Point of incoherences: While the Page Extension URL and the Content are talking about a Military Community support program by Daniels Long Chevrolet, the Page Title is written like it is for Coast Chevrolet, which is a different dealership than the one indicated. This mistake can lead to confusion for the MS team when creating a new Landing Page, or in the case it’s a link for an existing page, to post the wrong Content.
+
+#### Levels of QA results:
+
+When making the QA for the Task Content/Structure elements and Content to Post and their coherence between each, there could be three levels of results:
+
+Passed: Task Content/Structure elements and Content to Post are matching each other, the Content to Post HTML is written in the correct format and with no missing or mismatching HTML opening and closing tags between elements.
+
+Observed: There are some issues with the HTML text for the Content to Post (missing/badly written tags, some missing elements in the attributes of said tags, etc), the Page Extension URL doesn’t match the Content To Post and/or Title according to the Topic, or the Title doesn’t reflect the Topic from the Content To Post and/or Page Extension URL.
+
+Critical: The Content to Post does not match the Page Title and/or Page Extension URL in the Topic at all. The gravity of the situation relies on being the main reason for confusion in the MS team at the time for creating new Landing Pages. It also can involve the issues in the Observed state.
+
+The Creative staff, according to the state of the QA, can take simple actions to solve it such as changing some words of the URL or the Title, or correcting the issues in the HTML code. In the Critical case, however, must check the Task Info to make sure it matches the Topic and other elements from the Content Request Details, and re-do the HTML text from scratch if necessary.
+
+By following this guide, you’ll ensure consistency and accurate Quality Assurance revision of Task elements, allowing the Creative Team to deliver Landing Page Tasks and content that make sense and make a more agile and efficient MS Landing Page creation workflow. Always prioritize understanding the instructions fully before proceeding.
+
+Thanks!
+

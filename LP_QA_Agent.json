@@ -1,0 +1,247 @@
+{
+  "name": "LP QA Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -300,
+        140
+      ],
+      "id": "2b8a68e9-88b2-4826-bde5-df5a4aad2206",
+      "name": "When chat message received",
+      "webhookId": "f718f52b-e48c-4f3b-ad2f-562e54db4305"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        360
+      ],
+      "id": "dc11eeed-9766-4f51-a5d7-3436229a43e6",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WfFTVstvnsrdnZlR",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "typeVersion": 1.3,
+      "position": [
+        80,
+        360
+      ],
+      "id": "5499ce01-f08c-41fb-9fef-857fa56b8c6d",
+      "name": "Postgres Chat Memory",
+      "credentials": {
+        "postgres": {
+          "id": "ZyB38g95VRVH2hWb",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "=When making the QA for the Task Content/Structure elements and Content to Post and their coherence between each, there could be three levels of results:\n\nPassed: Task Content/Structure elements and Content to Post are matching each other, the Content to Post HTML is written in the correct format and with no missing or mismatching HTML opening and closing tags between elements.\n\nObserved: There are some issues with the HTML text for the Content to Post (missing/badly written tags, some missing elements in the attributes of said tags, etc), the Page Extension URL doesn‚Äôt match the Content To Post and/or Title according to the Topic, or the Title doesn't reflect the Topic from the Content To Post and/or Page Extension URL.\n\nCritical: The Content to Post does not match the Page Title and/or Page Extension URL in the Topic at all. The gravity of the situation relies on being the main reason for confusion in the MS team at the time for creating new Landing Pages. It also can involve the issues in the Observed state.\n\nFor the given content, analyze and respond with the following structured output in JSON:\n\n{\n  \"status\": \"[Passed | Observed | Critical]\",\n  \"issues\": [list of issues found],\n  \"recommendation\": \"A short paragraph with suggestions for improvement.\",\n  \"content_structure_coherence\": \"[Yes | No]\",\n  \"extension_valid\": \"[Yes | No]\"\n}\n\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1.1,
+      "position": [
+        260,
+        360
+      ],
+      "id": "507612e5-571b-4edb-b632-1f648b64439d",
+      "name": "Info QA"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        480,
+        540
+      ],
+      "id": "c5b54164-45ac-4b44-a4d6-ca89676ab2e3",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WfFTVstvnsrdnZlR",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/text-embedding-004"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        140,
+        640
+      ],
+      "id": "f0bfa07b-fa9d-4031-8cd8-e7e836b6e897",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WfFTVstvnsrdnZlR",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "tableName": {
+          "__rl": true,
+          "value": "documents",
+          "mode": "list",
+          "cachedResultName": "documents"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        520
+      ],
+      "id": "0b8de96e-7074-48f3-9086-e9c450357c76",
+      "name": "Supabase Vector Store",
+      "credentials": {
+        "supabaseApi": {
+          "id": "1sYZhtcAv2t9WsI2",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You need to use the \"Info QA\" tool to get the information for the Title-URL-Content coherence and give an appropiate output to the client\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        0,
+        140
+      ],
+      "id": "f398e11f-002a-40bb-943a-2644ae0c6516",
+      "name": "QA Agent",
+      "executeOnce": false
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "QA Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "QA Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres Chat Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "QA Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Info QA": {
+      "ai_tool": [
+        [
+          {
+            "node": "QA Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Info QA",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supabase Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Info QA",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Supabase Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Agent": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b64113f5-989b-47f2-b05b-d3498a74935d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e875a083b444e09b673e8f4a1aed92da5c3ce850ee0fb535ff5e3245ec133c24"
+  },
+  "id": "XUZzE4GnmdzIC311",
+  "tags": []
+}
